@@ -53,7 +53,7 @@ public class MiniClusterUtil {
       dfsCluster.shutdown(true, true);
     }
     if (zkServer != null) {
-      zkServer.shutdown(true);
+      zkServer.shutdown();
     }
   }
 }

@@ -364,12 +364,16 @@
       <groupId>${hive.groupid}</groupId>
       <artifactId>hive-common</artifactId>
       <version>${hive.version}</version>
-      <exclusions>
-        <exclusion>
-          <groupId>org.eclipse.jetty.orbit</groupId>
-          <artifactId>javax.servlet</artifactId>
-        </exclusion>
-      </exclusions>
+  <exclusions>
+    <exclusion>
+      <groupId>org.eclipse.jetty.orbit</groupId>
+      <artifactId>javax.servlet</artifactId>
+    </exclusion>
+    <exclusion>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>*</artifactId>
+    </exclusion>
+  </exclusions>
     </dependency>
 
     <dependency>

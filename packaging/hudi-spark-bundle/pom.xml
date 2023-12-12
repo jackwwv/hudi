@@ -311,20 +311,20 @@
       <artifactId>hive-jdbc</artifactId>
       <version>${hive.version}</version>
       <scope>${spark.bundle.hive.scope}</scope>
-      <exclusions>
-    <exclusion>
-      <groupId>javax.servlet</groupId>
-      <artifactId>*</artifactId>
-    </exclusion>
-    <exclusion>
-      <groupId>javax.servlet.jsp</groupId>
-      <artifactId>*</artifactId>
-    </exclusion>
-    <exclusion>
-      <groupId>org.eclipse.jetty</groupId>
-      <artifactId>*</artifactId>
-    </exclusion>
-  </exclusions>
+       <exclusions>
+          <exclusion>
+            <groupId>javax.servlet</groupId>
+            <artifactId>*</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>*</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>*</artifactId>
+          </exclusion>
+        </exclusions>
     </dependency>
 
     <dependency>
@@ -352,12 +352,12 @@
     </exclusions>
     </dependency>
 
-    <dependency>
-      <groupId>${hive.groupid}</groupId>
-      <artifactId>hive-common</artifactId>ß
-      <version>${hive.version}</version>
-      <scope>${spark.bundle.hive.scope}</scope>
-      <exclusions>
+  <dependency>
+    <groupId>${hive.groupid}</groupId>
+    <artifactId>hive-common</artifactId>
+    <version>${hive.version}</version>
+    <scope>${spark.bundle.hive.scope}</scope>
+    <exclusions>
       <exclusion>
         <groupId>org.eclipse.jetty.orbit</groupId>
         <artifactId>javax.servlet</artifactId>
@@ -367,13 +367,33 @@
         <artifactId>*</artifactId>
       </exclusion>
     </exclusions>
-    </dependency>
-    <!-- zookeeper -->
-    <dependency>
-      <groupId>org.apache.curator</groupId>
-      <artifactId>curator-framework</artifactId>
-      <version>${zk-curator.version}</version>
-    </dependency>
+  </dependency>
+
+    <!-- 增加hudi配置版本的jetty -->
+<dependency>
+  <groupId>org.eclipse.jetty</groupId>
+  <artifactId>jetty-server</artifactId>
+  <version>${jetty.version}</version>
+</dependency>
+
+<dependency>
+  <groupId>org.eclipse.jetty</groupId>
+  <artifactId>jetty-util</artifactId>
+  <version>${jetty.version}</version>
+</dependency>
+
+<dependency>
+  <groupId>org.eclipse.jetty</groupId>
+  <artifactId>jetty-webapp</artifactId>
+  <version>${jetty.version}</version>
+</dependency>
+
+<dependency>
+  <groupId>org.eclipse.jetty</groupId>
+  <artifactId>jetty-http</artifactId>
+  <version>${jetty.version}</version>
+</dependency>
+
 
     <dependency>
       <groupId>org.apache.curator</groupId>
