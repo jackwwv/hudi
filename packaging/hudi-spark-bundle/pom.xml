@@ -284,11 +284,19 @@
       <version>${hive.version}</version>
       <scope>${spark.bundle.hive.scope}</scope>
       <exclusions>
-        <exclusion>
-          <artifactId>servlet-api</artifactId>
-          <groupId>javax.servlet</groupId>
-        </exclusion>
-      </exclusions>
+    <exclusion>
+      <artifactId>guava</artifactId>
+      <groupId>com.google.guava</groupId>
+    </exclusion>
+    <exclusion>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>*</artifactId>
+    </exclusion>
+    <exclusion>
+      <groupId>org.pentaho</groupId>
+      <artifactId>*</artifactId>
+    </exclusion>
+  </exclusions>
     </dependency>
 
     <dependency>
@@ -303,6 +311,20 @@
       <artifactId>hive-jdbc</artifactId>
       <version>${hive.version}</version>
       <scope>${spark.bundle.hive.scope}</scope>
+      <exclusions>
+    <exclusion>
+      <groupId>javax.servlet</groupId>
+      <artifactId>*</artifactId>
+    </exclusion>
+    <exclusion>
+      <groupId>javax.servlet.jsp</groupId>
+      <artifactId>*</artifactId>
+    </exclusion>
+    <exclusion>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>*</artifactId>
+    </exclusion>
+  </exclusions>
     </dependency>
 
     <dependency>
@@ -310,15 +332,42 @@
       <artifactId>hive-metastore</artifactId>
       <version>${hive.version}</version>
       <scope>${spark.bundle.hive.scope}</scope>
+      <exclusions>
+      <exclusion>
+        <groupId>javax.servlet</groupId>
+        <artifactId>*</artifactId>
+      </exclusion>
+      <exclusion>
+        <groupId>org.datanucleus</groupId>
+        <artifactId>datanucleus-core</artifactId>
+      </exclusion>
+      <exclusion>
+        <groupId>javax.servlet.jsp</groupId>
+        <artifactId>*</artifactId>
+      </exclusion>
+      <exclusion>
+        <artifactId>guava</artifactId>
+        <groupId>com.google.guava</groupId>
+      </exclusion>
+    </exclusions>
     </dependency>
 
     <dependency>
       <groupId>${hive.groupid}</groupId>
-      <artifactId>hive-common</artifactId>
+      <artifactId>hive-common</artifactId>ß
       <version>${hive.version}</version>
       <scope>${spark.bundle.hive.scope}</scope>
+      <exclusions>
+      <exclusion>
+        <groupId>org.eclipse.jetty.orbit</groupId>
+        <artifactId>javax.servlet</artifactId>
+      </exclusion>
+      <exclusion>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>*</artifactId>
+      </exclusion>
+    </exclusions>
     </dependency>
-
     <!-- zookeeper -->
     <dependency>
       <groupId>org.apache.curator</groupId>
